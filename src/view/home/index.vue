@@ -5,8 +5,8 @@
         <!-- <img src="../../assets/images/logo.png" alt=""> -->
         <div class="btn">登录</div>
         <h3>0727</h3>
-        <p>相信自己，你是个天才</p>
-        <p>更新时间：2017-07-26</p>
+        <p>认真经营，点滴积累</p>
+        <p>更新时间：2017-07-27</p>
       </div>
       <WaterWave type="circle" />
     </div>

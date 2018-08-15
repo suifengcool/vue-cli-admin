@@ -6,6 +6,11 @@ const actions = {
   changeMenus ({dispatch,commit,state},data) {
     commit(types.CHANGE_MENUS,data)
   },
+  
+  // 切换侧边隐藏
+  toggleSideBar({dispatch,commit,state}) {
+    commit('TOGGLE_SIDEBAR')
+  },
 
   //改变TreeData
   async changdeTreeDataAction ({dispatch,commit,state},data) {

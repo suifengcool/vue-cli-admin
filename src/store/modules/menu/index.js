@@ -2,12 +2,25 @@ import * as types from './mutation-types'
 import getters from "./getters"
 import actions from "./actions"
 import mutations from "./mutations"
-
+import Cookies from 'js-cookie'
 import icons from "./icons";
 
+
 const state = {
+  sidebar: {
+    opened: !+Cookies.get('sidebarStatus')
+  },
   menus: [],
   menusTressData: [ //菜单树结构数据
+    {
+      name:'角色管理',icon:'icon-chanpin',url:'/role',tips:'角色管理',
+      childrenMenu: [
+        {name:'角色权限管理',icon:'icon-chanpin',url:'/authority',tips:'角色权限管理'},
+        {name:'角色权限管理',icon:'icon-chanpin',url:'/authority',tips:'角色权限管理'},
+      ]
+    },
+    {name:'角色权限管理',icon:'icon-chanpin',url:'/authority',tips:'角色权限管理'},
+    {name:'菜单管理',icon:'icon-chanpin',url:'/menu',tips:'菜单管理'},
   ],
   icons: icons
 }

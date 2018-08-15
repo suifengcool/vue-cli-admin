@@ -7,9 +7,6 @@
   </Breadcrumb>
 </template>
 <script>
-  // import {menuApi} from '../api/adminApi'
-  // import {coocki} from '../constant/utils'
-  // import {ACTIVE_PATH, ACCESS_TOKEN, TEACHER_MENU} from '../constant'
 
 
   import { mapGetters } from "vueX";
@@ -28,19 +25,19 @@
     },
     computed: {
       menu() {
-        return this.findMenu(this.menus)
+        return this.findMenu(this.menusTressData)
       },
       ...mapGetters('menu',[
-        'menus',
+        'menusTressData',
       ]),
     },
     methods: {
-      findMenu(menus = []) {
+      findMenu(menusTressData = []) {
         let res = []
-        if (!menus || menus.length < 1) {
+        if (!menusTressData || menusTressData.length < 1) {
           return res
         }
-        menus.forEach(({url, name, id, code, icon, children}) => {
+        menusTressData.forEach(({url, name, id, code, icon, children}) => {
           if (( this.$route.path).startsWith(url)) {
             res.push({url, name, id, code, icon})
           }
@@ -61,10 +58,10 @@
     },
     created() {
       // if (coocki.get(ACCESS_TOKEN).startsWith('XUEXUNBAO_')) {
-      //   this.menus = TEACHER_MENU
+      //   this.menusTressData = TEACHER_MENU
       // } else {
       //   menuApi().then((data) => {
-      //     this.menus = data
+      //     this.menusTressData = data
       //   })
       // }
     },
@@ -73,6 +70,7 @@
 
 <style lang="less">
   .breadcrumb {
+    padding-left: 35px;
     .el-breadcrumb__item {
       line-height: 74px;
       i {
