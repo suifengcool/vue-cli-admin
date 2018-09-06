@@ -17,10 +17,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
-  // cheap-module-eval-source-map is faster for development
   devtool: config.dev.devtool,
-
-  // these devServer options should be customized in /config/index.js
+  mode: 'development',
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
@@ -40,6 +38,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     publicPath: config.dev.assetsPublicPath,
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
+    before: require('../src/mock'),// 引入mock/index.js
     watchOptions: {
       poll: config.dev.poll,
     }

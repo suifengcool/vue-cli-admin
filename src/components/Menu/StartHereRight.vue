@@ -1,20 +1,20 @@
 <template>
   <div class="StartHereRight">
     <div class="header-img">
-      <!-- 屏幕放大 -->
-      <Screenfull class="screenfull right-menu-item"></Screenfull>
-     
       <span>
         <DropdownItem class="clearfix" >
         <!-- <i class="el-icon-message"></i>
         <Badge class="mark" :value="UnreadLength" /> -->
       </DropdownItem>
       </span>
-      <!-- <span><img :src="herdData.logo" @error="herdData.logo=require('../../assets/images/xxbLogo.png')"/></span> -->
-      <!-- <span>{{herdData.userName}}</span> -->
-      
+      <span><img :src="herdData.logo" @error="herdData.logo=require('../../../assets/logo.png')"/></span>
+      <span>{{herdData.userName}}</span>
+      <span>
+        <!-- <Tooltip class="item" effect="dark" content="退出登录" placement="bottom-start">
+          <i class="iconfont icon-tuichu" @click="quitHanlk"></i>
+        </Tooltip> -->
         <Dropdown @command="handleCommand" trigger="hover" class="menu-dropdown">
-          <img src="http://owkf8fxmh.bkt.clouddn.com/2018072316204828851b3c1baa12927593c15ee6550fcf7e2.jpg" alt="">
+          <i class="iconfont icon-tuichu el-dropdown-link open-menu"></i>
           <DropdownMenu slot="dropdown">
             <DropdownItem command='goInfo'><i class="el-icon-tickets" />我的资料</DropdownItem>
             <DropdownItem command='editPassword'><i class="el-icon-edit"/>修改密码</DropdownItem>
@@ -40,13 +40,13 @@
           <Input v-model='userInfo.userName' disabled/>
         </FormItem>
         <FormItem label="原密码：" prop="userPassword">
-          <Input type="password" v-model="dialog.form.userPassword"/>
+          <Input type="password" v-model.trim="dialog.form.userPassword"/>
         </FormItem>
         <FormItem label="新密码：" prop="userNewPassword">
-          <Input type="password" v-model="dialog.form.userNewPassword"/>
+          <Input type="password" v-model.trim="dialog.form.userNewPassword"/>
         </FormItem>
         <FormItem label="确认密码：" prop="surePwd">
-          <Input type="password" v-model="dialog.form.surePwd"/>
+          <Input type="password" v-model.trim="dialog.form.surePwd"/>
         </FormItem>
       </Form>
       <div class="text-center">
@@ -57,12 +57,11 @@
   </div>
 </template>
 <script>
-import Screenfull from './Screenfull'
 import {Badge,DropdownItem,Icon,Tooltip,Dropdown,DropdownMenu,Dialog,Button,Form,FormItem,Input} from 'element-ui'
 import { mapGetters } from "vuex";
 export default {
   name:'StartHereRight',
-  components:{Badge,DropdownItem,Screenfull,Icon,Tooltip,Dropdown,DropdownMenu,Dialog,Button,Form,FormItem,Input},
+  components:{Badge,DropdownItem,Icon,Tooltip,Dropdown,DropdownMenu,Dialog,Button,Form,FormItem,Input},
   data(){
     return {
       UnreadLength: "3",
@@ -113,12 +112,6 @@ export default {
     };
   },
   props:{
-    // 屏幕放大
-    // data() {
-    // return {
-    //   isFullscreen: false
-    // }
-  //  },
     show:{                          
      type:Boolean,
      default:false   
@@ -151,19 +144,6 @@ export default {
       type:　Function,
       default: ()=>{}   
     }
-    // 屏幕放大
-    // width: {
-    //   type: Number,
-    //   default: 22
-    // },
-    // height: {
-    //   type: Number,
-    //   default: 22
-    // },
-    // fill: {
-    //   type: String,
-    //   default: '#48576a'
-    // }
   },
   computed:{
     ...mapGetters('userInfo',[
@@ -195,19 +175,7 @@ export default {
     //点击下拉菜单的函数
     handleCommand(command){
       command == 'quitHanlk'?this.quitHanlk():command == 'goInfo'?this.goUserInfo():this.editPassword()     
-    },
-    // 屏幕放大的点击事件
-    // click() {
-    //   if (!screenfull.enabled) {
-    //     this.$message({
-    //       message: 'you browser can not work',
-    //       type: 'warning'
-    //     })
-    //     return false
-    //   }
-    //   screenfull.toggle()
-    // }
-
+    }
   },
   watch: {
     data (){
@@ -218,34 +186,16 @@ export default {
 </script>
 <style lang="less" scope>
   .StartHereRight{
+    position: fixed;
     top: 0;
-    left: 670px;
+    left: 470px;
     right: 0;
     height: 70px;
     line-height: 70px;
+    background-color: #303246;
     font-size: 22px;
     z-index: 9999999999999;
-    // 放大屏幕
-    .screenfull {
-      display: flex;
-      z-index: 333;
-      position: absolute;
-      display: inline-block;
-      width: 20px;
-      top: 12px;
-      .screenfull-svg {
-        display: inline-block;
-        cursor: pointer;
-        fill: #5a5e66;;
-        width: 20px;
-        height: 20px;
-        vertical-align: 10px;
-      }
-    }
-    
   }
-
-  
 </style>
 <style lang="less">
    .el-dropdown-menu{
@@ -269,27 +219,9 @@ export default {
 
 .StartHereRight {
   .header-img {
+    float: right;
     height: 100%;
-    margin-right:30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .screenfull.right-menu-item {
-      position: relative;
-    }
-    .menu-dropdown {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        width: 50px;
-        height: 50px;
-        padding: 5px;
-        border: 1px solid rgba(120, 130, 140, 0.13);
-        border-radius: 100%;
-      }
-      
-    }
+    margin-right:20px;
     .el-dropdown-menu__item:focus,
     .el-dropdown-menu__item:not(.is-disabled):hover {
       background: none;
@@ -320,6 +252,8 @@ export default {
       margin-right: 0;
       .el-dropdown-menu__item {
         padding: 0;
+        // margin-top: 23px;
+        // position: relative;
         .el-icon-message {
           font-size: 24px;
           cursor: pointer;
@@ -336,44 +270,28 @@ export default {
       outline:none;
       }
     }
-    // span:nth-child(2) {
-    //   width: 44px;
-    //   height: 44px;
-    //   margin-top: 13px;
-    //   position: relative;
-    //   img{
-    //     width: 100%;
-    //     position: absolute;
-    //     left: 50%;
-    //     top: 50%;
-    //     transform: translate(-50%,-50%);
-    //   }
-    // }
-    // span:nth-child(3) {
-    //   font-size: 16px;
-    // }
     span:nth-child(2) {
-      cursor: pointer;
-      .iconfont{
-        padding: 0 10px 0 10px;
-        // border-left: 1px solid #b2b2b2;
-        font-size: 16px;
-        cursor: pointer;
+      width: 44px;
+      height: 44px;
+      margin-top: 13px;
+      position: relative;
+      img{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
       }
     }
-     span:nth-child(3) {
-      cursor: pointer;
+    span:nth-child(3) {
+      font-size: 16px;
+    }
+    span:nth-child(4) {
       .iconfont{
         padding: 0 10px 0 10px;
-        // border-left: 1px solid #b2b2b2;
-        font-size: 16px;
+        border-left: 1px solid #b2b2b2;
+        font-size: 20px;
         cursor: pointer;
-      }
-    }
-    .item{ 
-      span{
-        font-size: 16px;
-        // color: #ccc8b2;
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="avatar_box" id="update">
+  <div class="avatar_box" id="updateFile">
     <Upload class="avatar-uploader" action="/" :show-file-list="false" :before-upload="beforeUpload" :http-request="upload" :on-change="handleChange" :file-list="fileList3" :list-type="type" drag :disabled='disabled'>
     </Upload>
   </div>
@@ -89,7 +89,7 @@ export default {
     },
 
     beforeUpload(file) {
-      //console.log(file)   
+      //console.log(file)
       var fileName = file.name
       const isType = fileName.substring(fileName.lastIndexOf(".") + 1) === this.fileType;
       //console.log(fileName.substring(fileName.lastIndexOf(".")+1),"file")
@@ -121,7 +121,7 @@ export default {
 }
 </style>
 <style lang="less">
-#update {
+#updateFile {
     .el-upload-dragger,
     .avatar_box,
     .avatar-uploader {

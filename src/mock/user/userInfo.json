@@ -1,0 +1,577 @@
+{
+  "C-API-Status": "00",
+  "C-Response-Body": {
+    "userData": {
+      "username": "张三",
+      "userorg": "建行武汉数据中心",
+      "userid": "12323456",
+      "role": "123",
+      "currentShop": "123"
+    },
+    "menuData": [
+      {
+        "path": "",
+        "meta": {
+          "title": "培训计划管理",
+          "icon": "el-icon-fnb-order"
+        },
+        "children": [
+          {
+            "path": "/train_plan_manage/search",
+            "meta": {
+              "title": "培训计划查询"
+            }
+          },
+          {
+            "path": "/train_plan_manage/setting",
+            "meta": {
+              "title": "培训计划维护"
+            }
+          },
+          {
+            "path": "/train_plan_manage/confirm",
+            "meta": {
+              "title": "培训计划审核"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/class",
+        "meta": {
+          "title": "培训班管理",
+          "icon": "el-icon-menu"
+        },
+        "children": [
+          {
+            "path": "/class/list",
+            "meta": {
+              "title": "培训班查询"
+            }
+          },
+          {
+            "path": "/class/curriculum",
+            "meta": {
+              "title": "课表管理"
+            }
+          },
+          {
+            "path": "/class/curriculum-schedule",
+            "meta": {
+              "title": "课表维护"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/organization",
+        "meta": {
+          "title": "组织机构管理",
+          "icon": "el-icon-fnb-order"
+        },
+        "children": [
+          {
+            "path": "/organization/campus/list",
+            "meta": {
+              "title": "校区查询"
+            }
+          },
+          {
+            "path": "/organization/traininst/trainSerch",
+            "meta": {
+              "title": "培训机构查询"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/traning-resources",
+        "meta": {
+          "title": "培训基地资源管理",
+          "icon": "el-icon-fnb-order"
+        },
+        "children": [
+          {
+            "path": "/traning-resources/sportsPlace/place-list",
+            "meta": {
+              "title": "运动场所维护"
+            }
+          },
+          {
+            "path": "/traning-resources/bus/list",
+            "meta": {
+              "title": "接送车辆维护"
+            }
+          },
+          {
+            "path": "/traning-resources/building/list",
+            "meta": {
+              "title": "楼宇管理"
+            }
+          },
+          {
+            "path": "/traning-resources/equipment-type/list",
+            "meta": {
+              "title": "设备种类维护"
+            },
+            "children": [
+              {
+                "path": "/traning-resources/equipment-type/list",
+                "meta": {
+                  "title": "设备查询"
+                }
+              },
+              {
+                "path": "/traning-resources/equipment-type/type",
+                "meta": {
+                  "title": "设备种类管理"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/traning-resources/equipment/list",
+            "meta": {
+              "title": "设备维护"
+            },
+            "children": [
+              {
+                "path": "/traning-resources/equipment/list",
+                "meta": {
+                  "title": "设备管理"
+                }
+              },
+              {
+                "path": "/traning-resources/equipment/edit/:id",
+                "meta": {
+                  "title": "设备新增/修改"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/traning-resources/machine/search",
+            "meta": {
+              "title": "培训机房维护"
+            }
+          },
+          {
+            "path": "/traning-resources/restaurant/search",
+            "meta": {
+              "title": "餐厅维护"
+            }
+          },
+          {
+            "path": "/traning-resources/room/list",
+            "meta": {
+              "title": "客房维护"
+            },
+            "children": [
+              {
+                "path": "/traning-resources/room/list",
+                "meta": {
+                  "title": "客房查询"
+                }
+              },
+              {
+                "path": "/traning-resources/room/list/typeList",
+                "meta": {
+                  "title": "客房类型查询"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/traning-resources/classRoom/search",
+            "meta": {
+              "title": "教室维护"
+            }
+          },
+          {
+            "path": "/traning-resources/teachPlace/teachPlace-search",
+            "meta": {
+              "title": "教学场所维护"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/training-services/transferStation",
+        "meta": {
+          "title": "基地服务管理",
+          "icon": "el-icon-menu"
+        },
+        "children": [
+          {
+            "path": "/training-services/traningResources/ResourcesDistribution",
+            "meta": {
+              "title": "培训班资源分配"
+            },
+            "children": [
+              {
+                "path": "/training-services/traningResources/ResourcesDistribution",
+                "meta": {
+                  "title": "资源分配查询"
+                }
+              },
+              {
+                "path": "/training-services/traningResources/needShow",
+                "meta": {
+                  "title": "需求展示"
+                }
+              },
+              {
+                "path": "/training-services/traningResources/planTeachPlace",
+                "meta": {
+                  "title": "分配教学场所"
+                }
+              },
+              {
+                "path": "/training-services/traningResources/setTime",
+                "meta": {
+                  "title": "课程具体时间设置"
+                }
+              },
+              {
+                "path": "/training-services/traningResources/eatPlan",
+                "meta": {
+                  "title": "就餐安排"
+                }
+              },
+              {
+                "path": "/training-services/traningResources/managerAssignment",
+                "meta": {
+                  "title": "培训经理指派"
+                }
+              },
+              {
+                "path": "/training-services/traningResources/lecturerPlan",
+                "meta": {
+                  "title": "讲师安排"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/training-services/transferStation/stationInfo",
+            "meta": {
+              "title": "用车服务管理"
+            },
+            "children": [
+              {
+                "path": "/training-services/transferStationstationInfo",
+                "meta": {
+                  "title": "接送站信息查询"
+                }
+              },
+              {
+                "path": "/training-services/transferStationstationList",
+                "meta": {
+                  "title": "出车站点维护"
+                }
+              },
+              {
+                "path": "/training-services/transferStationpickArrangement",
+                "meta": {
+                  "title": "接站安排"
+                }
+              },
+              {
+                "path": "/training-services/transferStationsendArrangement",
+                "meta": {
+                  "title": "送站安排"
+                }
+              },
+              {
+                "path": "/training-services/transferStationtimeArrangement",
+                "meta": {
+                  "title": "送站时间安排"
+                }
+              },
+              {
+                "path": "/training-services/transferStationpeopleList",
+                "meta": {
+                  "title": "接送站人管理"
+                }
+              },
+              {
+                "path": "/training-services/transferStationdepatchArrangement",
+                "meta": {
+                  "title": "出车安排"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/training-services/guestRoom/roomBooking",
+            "meta": {
+              "title": "客房服务管理"
+            },
+            "children": [
+              {
+                "path": "/training-services/guestRoom/roomBooking",
+                "meta": {
+                  "title": "客房预订"
+                }
+              },
+              {
+                "path": "/training-services/guestRoom/roomReception",
+                "meta": {
+                  "title": "客房接待"
+                }
+              },
+              {
+                "path": "/training-services/guestRoom/roomInventory",
+                "meta": {
+                  "title": "客房盘点"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/training-services/catering/recipeList",
+            "meta": {
+              "title": "餐饮服务管理"
+            },
+            "children": [
+              {
+                "path": "/training-services/catering/recipeList",
+                "meta": {
+                  "title": "菜谱维护"
+                }
+              },
+              {
+                "path": "/training-services/catering/weekRecipeList",
+                "meta": {
+                  "title": "每周菜谱维护"
+                }
+              },
+              {
+                "path": "/training-services/catering/specialDish",
+                "meta": {
+                  "title": "特色菜展示"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/training-services/repair/repair-task",
+            "meta": {
+              "title": "维修服务管理"
+            },
+            "children": [
+              {
+                "path": "/training-services/repair/repair-task",
+                "meta": {
+                  "title": "维修任务管理"
+                }
+              },
+              {
+                "path": "/training-services/repair/repair-register",
+                "meta": {
+                  "title": "报修"
+                }
+              }
+            ]
+          },
+          {
+            "path": "/training-services/training-staff/maintenance-list",
+            "meta": {
+              "title": "基地服务人员管理"
+            },
+            "children": [
+              {
+                "path": "/training-services/training-staff/maintenance",
+                "meta": {
+                  "title": "维修人员维护"
+                }
+              },
+              {
+                "path": "/training-services/training-staff/cleaner",
+                "meta": {
+                  "title": "保洁人员维护"
+                }
+              },
+              {
+                "path": "/training-services/training-staff/driver",
+                "meta": {
+                  "title": "驾驶员维护"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "/training-class",
+        "meta": {
+          "title": "培训班管理",
+          "icon": "el-icon-menu"
+        },
+        "children": [
+          {
+            "path": "/training-class/classList",
+            "meta": {
+              "title": "培训班查询"
+            }
+          },
+          {
+            "path": "/training-class/classEdit",
+            "meta": {
+              "title": "培训班基本信息管理"
+            }
+          },
+          {
+            "path": "/training-class/reserveResources",
+            "meta": {
+              "title": "预定培训资源"
+            }
+          },
+          {
+            "path": "/training-class/reserveConfirm",
+            "meta": {
+              "title": "培训资源确认"
+            }
+          },
+          {
+            "path": "/training-class/curriculumList",
+            "meta": {
+              "title": "课表管理"
+            }
+          },
+          {
+            "path": "/training-class/registList",
+            "meta": {
+              "title": "报名管理(部门经办)"
+            }
+          },
+          {
+            "path": "/training-class/registListCheck",
+            "meta": {
+              "title": "报名管理(项目经理)"
+            }
+          },
+          {
+            "path": "/training-class/classService",
+            "meta": {
+              "title": "班务管理"
+            }
+          },
+          {
+            "path": "/training-class/report",
+            "meta": {
+              "title": "培训报告"
+            }
+          },
+          {
+            "path": "/training-class/publish",
+            "meta": {
+              "title": "公告发布"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/teacher-center",
+        "meta": {
+          "title": "师资中心",
+          "icon": "el-icon-menu"
+        },
+        "children": [
+          {
+            "path": "/teacher-center/shcedule",
+            "meta": {
+              "title": "教师教学日程管理"
+            }
+          },
+          {
+            "path": "/teacher-center/status",
+            "meta": {
+              "title": "教师状态维护"
+            }
+          },
+          {
+            "path": "/teacher-center/lecturers-info/info",
+            "meta": {
+              "title": "讲师信息维护"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/classmain",
+        "meta": {
+          "title": "课程中心",
+          "icon": "el-icon-menu"
+        },
+        "children": [
+          {
+            "path": "/classmain/serch",
+            "meta": {
+              "title": "课程查询"
+            }
+          },
+          {
+            "path": "/classmain/classcontrol/mine",
+            "meta": {
+              "title": "课程管理"
+            },
+            "children": [
+              {
+                "path": "/classmain/classcontrol/main",
+                "meta": {
+                  "title": "课程管理"
+                }
+              },
+              {
+                "path": "/classmain/classcontrol/train",
+                "meta": {
+                  "title": "培训方式管理"
+                }
+              },
+              {
+                "path": "/classmain/classcontrol/msg",
+                "meta": {
+                  "title": "课程分类(课程目录)"
+                }
+              },
+              {
+                "path": "/classmain/classcontrol/mine",
+                "meta": {
+                  "title": "我的课程"
+                }
+              },
+              {
+                "path": "/classmain/classcontrol/limit",
+                "meta": {
+                  "title": "课程审批管理"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "/systemParam",
+        "meta": {
+          "title": "系统参数",
+          "icon": "el-icon-menu"
+        },
+        "children": [
+          {
+            "path": "/systemParam/systemParamControl/platParam/platParam-list",
+            "meta": {
+              "title": "平台业务参数"
+            }
+          },
+          {
+            "path": "/systemParam/systemParamControl/traininstParam/traininstParam-list",
+            "meta": {
+              "title": "培训中心参数"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

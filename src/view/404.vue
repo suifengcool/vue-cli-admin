@@ -2,10 +2,10 @@
     <div class='not_found'>
 		<div class="found">
 			<div class="shuzi">
-			    <!-- <img src="../../static/img/404/shuzi_404.png" alt=""> -->
+			    <img src="../assets/image/404/404.png" alt="">
 			</div>
 			<div class="katong">
-				<img src="../assets/images/katong_404.png" alt="">
+				<img src="../assets/image/404/404_katong.png" alt="">
 				<p>Sorry,您访问的页面不存在哦...</p>
 			</div>
 			<div class="btn">
@@ -22,13 +22,6 @@ export default {
     name: 'notFound',
     components: {
     	Button
-    },
-    data () {
-		return {
-		}
-    },
-
-    created () {
     },
 
     methods: {

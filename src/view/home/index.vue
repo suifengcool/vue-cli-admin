@@ -1,72 +1,103 @@
 <template>
-  <div id="home">
-    <div class="home-contain" @click="$router.push('/login')">
-      <div class="text-contain">
-        <!-- <img src="../../assets/images/logo.png" alt=""> -->
-        <div class="btn">登录</div>
-        <h3>0727</h3>
-        <p>认真经营，点滴积累</p>
-        <p>更新时间：2017-07-27</p>
+  <div class='home-login'>
+    <Form class="login" :rules="rules" ref="loginForm" :model="form" status-icon>
+      <div class="panfish">
+        <img v-if="imgType == 1" class="normal" src="https://gold-cdn.xitu.io/v3/static/img/normal.0447fe9.png" alt="">
+        <img v-if="imgType == 2" class="greeting" src="https://gold-cdn.xitu.io/v3/static/img/greeting.1415c1c.png" alt="">
+        <img v-if="imgType == 3" class="blindfold" src="https://gold-cdn.xitu.io/v3/static/img/blindfold.58ce423.png" alt="">
       </div>
-      <WaterWave type="circle" />
-    </div>
-
+      <h3>登录</h3>
+      <FormItem label=""   prop="userName">
+        <Input type="text" class="userNameInput" v-model="form.userName" auto-complete="off" prefix-icon="Icon-date" placeholder="Username" size="medium" @focus="focus(2)" @blur="imgType = 1"/>
+      </FormItem>
+      <FormItem  label=""  prop="password">
+        <Input type="password" v-model="form.password" auto-complete="off" prefix-icon="Icon-date" placeholder="Password" size="medium" @focus="focus(3)" @blur="imgType = 1"/>
+      </FormItem>
+      <div class="btn">
+        <Button class="active" @click="submit">登录</Button>
+      </div>
+    </Form>
   </div>
 </template>
 
 <script>
-import WaterWave from '../../components/WaterWave';
+import { Button,Form,FormItem,Input} from 'element-ui'
 export default {
-  name: 'Home',
-  
+  name: 'notFound',
   components: {
-    WaterWave
+    Button,
+    Form,
+    FormItem,
+    Input
   },
-
-  data() {
+  data () {
     return {
-      
+      imgType: 1,
+      form:{
+        userName: '',
+        password: ''
+      },
+      rules: {
+        userName: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+      }
     }
   },
+  methods: {
+    focus(index){
+      this.imgType = index
+    },
+    submit() {
+      this.$refs.loginForm.validate(val => {
+        if(val){
+          this.$router.push('/train_plan_manage/search')
+        }
+      })
+    },
+  }
 }
 </script>
-<style lang="sass" scoped>
-#home
-  height: 100%
-  display: flex
-  align-items: center
-  justify-content: center
-  background: #3f898f
-  .home-contain
-    position: relative
-    cursor: pointer
-    .text-contain
-      width: 100%
+<style lang='sass' scoped>
+.home-login
+  height: 100vh
+  background: url('../../assets/image/home/bg.jpg') center center no-repeat
+  background-size: 120%
+  font-size: 14px
+  .login
+    position: absolute
+    top: 45%
+    left: 50%
+    margin: -160px 0 0 -160px
+    width: 320px
+    height: 320px
+    padding: 36px
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.08)
+    img
+      width: 120px
       position: absolute
+      top: 10px
       left: 50%
-      top: 48%
-      transform: translate(-50%,-50%)
-      color: #fff
-      text-align: center
-      img
-        width: 100px
-        margin-bottom: 30px
-        transition: All 0.4s ease-in-out
-      .btn
-        height: 50px
-        line-height: 50px
-        display: none
-      h3 
-        font-size: 100px
-        font-weight: 500
-        margin-bottom: 20px
-      p
-        font-size: 24px 
-        width: 100%
-        &:last-child
-          font-size: 22px
-          color: #967126
-          margin-top: 10px
-    &:hover img
-      transform: translate3d(0,-30px,0)
+      z-index: 1
+    .normal
+      transform: translate(-50%,-83%)
+    .greeting
+      transform: translate(-50%,-75.8%)
+    .blindfold
+      transform: translate(-50%,-75%)
+</style>
+<style lang="sass">
+.home-login
+  h3
+    height: 40px
+    line-height: 40px
+    margin-bottom: 24px
+    color: #666
+    font-size: 16px
+  .btn
+    display: flex
+    justify-content: center
+    button
+      width: 104px
+  .el-input--prefix .el-input__inner
+    padding-left: 10px
 </style>
