@@ -9,4 +9,8 @@ const router = new Router({
   routes: routes,
 })
 
+router.afterEach(({ meta, params, query}) => {
+  document.title = !meta || !meta.title ? '建行大学' : meta.title
+})
+
 export default router

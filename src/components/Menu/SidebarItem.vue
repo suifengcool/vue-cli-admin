@@ -6,13 +6,13 @@
       :index="item.path" 
       @click="select"
     >
-      <i class="icon-font iconfont el-icon-menu" :class="item.meta.icon"></i>
+      <i :class="item.meta.icon || 'el-icon-menu'"></i>
       <span>{{item.meta.title}}</span>
     </MenuItem>
 
     <Submenu :index="index" v-if="item.children && item.children.length >0">
       <template slot="title">
-        <i class="icon-font iconfont el-icon-menu" :class="item.meta.icon"></i>
+        <i :class="item.meta.icon || 'el-icon-menu'"></i>
         <span>{{item.meta.title}}</span>
       </template>
       <SidebarItem 

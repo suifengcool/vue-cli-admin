@@ -1,35 +1,3 @@
-<style lang="less">
-.el-pagination {
-  .el-pager {
-    margin: 0 10px;
-    li {
-      background-color: transparent;
-    }
-  }
-  > .btn-prev {
-    padding-right: 0px;
-    min-width: 28px;
-  }
-  > .btn-next {
-    padding-left: 0px;
-    min-width: 28px;
-  }
-  button {
-    padding: 0;
-    border-radius: 50%;
-  }
-  .el-select>.el-input>.el-input__inner {
-    border-radius: 17px !important;
-    border: solid 1px #d2d7dc;
-    line-height: 28px;
-  }
-  .el-pagination__editor.el-input .el-input__inner {
-    border-radius: 17px !important;
-    border: solid 1px #d2d7dc;
-    line-height: 28px;
-  }
-}
-</style>
 <template>
   <Pagination
     @size-change="handleSizeChange"
@@ -95,3 +63,35 @@ export default {
   }
 }
 </script>
+<style lang="less">
+.el-pagination {
+  .el-pager {
+    margin: 0 10px;
+    li {
+      background-color: transparent;
+    }
+  }
+  > .btn-prev {
+    padding-right: 0px;
+    min-width: 28px;
+  }
+  > .btn-next {
+    padding-left: 0px;
+    min-width: 28px;
+  }
+  button {
+    padding: 0;
+    border-radius: 50%;
+  }
+  .el-select>.el-input>.el-input__inner {
+    border-radius: 17px !important;
+    border: solid 1px #d2d7dc;
+    line-height: 28px;
+  }
+  .el-pagination__editor.el-input .el-input__inner {
+    border-radius: 17px !important;
+    border: solid 1px #d2d7dc;
+    line-height: 28px;
+  }
+}
+</style>

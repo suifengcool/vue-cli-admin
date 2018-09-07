@@ -69,7 +69,7 @@ Axios.interceptors.response.use((response) => {
     Message.error({message: message})
 
     // token失效，跳转至登录页
-    status === 600 && router.replace('/login')
+    status === 600 && router.replace('/')
     return Promise.reject(response)
   }
 }, (error) => {

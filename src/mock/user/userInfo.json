@@ -13,7 +13,7 @@
         "path": "",
         "meta": {
           "title": "培训计划管理",
-          "icon": "el-icon-fnb-order"
+          "icon": "el-icon-tickets"
         },
         "children": [
           {
@@ -67,7 +67,7 @@
         "path": "/organization",
         "meta": {
           "title": "组织机构管理",
-          "icon": "el-icon-fnb-order"
+          "icon": "el-icon-menu"
         },
         "children": [
           {
@@ -88,7 +88,7 @@
         "path": "/traning-resources",
         "meta": {
           "title": "培训基地资源管理",
-          "icon": "el-icon-fnb-order"
+          "icon": "el-icon-menu"
         },
         "children": [
           {
@@ -555,7 +555,7 @@
         "path": "/systemParam",
         "meta": {
           "title": "系统参数",
-          "icon": "el-icon-menu"
+          "icon": "el-icon-setting"
         },
         "children": [
           {

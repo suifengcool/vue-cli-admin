@@ -16,11 +16,11 @@ export default {
     Select, Option
   },
   created() {
-    console.log(this.options,'options88888')  
+
     },
   data() {
     return {
-      //  value2: options[0],
+
     }
   },
   props: {

@@ -13,16 +13,7 @@
 import Menu from './Menu'      
 export default{
   name: 'layout',
-  data(){
-    return {
-
-    }
-  },
-  components:{ Menu },
-
-  created(){
-    
-  }
+  components:{ Menu }
 }
 </script>
 
