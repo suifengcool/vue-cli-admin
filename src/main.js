@@ -1,14 +1,17 @@
+import 'babel-polyfill'
+
 import Vue from 'vue'
 import router from './router'
-import 'element-ui/lib/theme-chalk/index.css'
-import ElementUI from 'element-ui'
 import App from './App.vue'
 import store from './store'
+import {Message} from 'element-ui'
 
 import './assets/css/reset.css'
-Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+
+// 将 Message 直接挂在 Vue 实例上
+Vue.prototype.$message = Message
 
 // 创建和挂载根实例 通过 router 配置参数注入路由
 window.ccb = new Vue({

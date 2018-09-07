@@ -6,10 +6,12 @@ module.exports = {
   dev: {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // 设置本地调试服务代理
+    // changeOrigin:true, 则本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题
     proxyTable: {
       '/rest': {
         target: "http://11.63.9.84:8101/",
-        changeOrigin: true,  // 为true,则本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题
+        changeOrigin: true,  
         pathRewrite: {
           '^/rest': ''
         }
