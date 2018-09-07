@@ -1,13 +1,14 @@
 <template>
   <div class='train-plan-manage-search'>
-    查询
+    <Breadcrumb />
   </div>
 </template>
 <script>
+import Breadcrumb from '../../../components/Breadcrumb'
 export default {
   name: 'train-plan-manage-search',
   
-  components: {},
+  components: {Breadcrumb},
 
   data() {
     return {

@@ -10,7 +10,7 @@
     },
     "menuData": [
       {
-        "path": "",
+        "path": "/train_plan_manage/search",
         "meta": {
           "title": "培训计划管理",
           "icon": "el-icon-tickets"

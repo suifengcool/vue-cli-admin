@@ -64,13 +64,6 @@ export default {
   methods: {
     ...mapActions('userInfo',['getUserInfo']),
 
-    // // 根据code菜单过滤
-    // datafilter(data){
-    //   return data.filter((item)=>{
-    //     return this.perms.indexOf(item.code) != -1
-    //     // return true
-    //   })
-    // },
     goHome(){
 
     },

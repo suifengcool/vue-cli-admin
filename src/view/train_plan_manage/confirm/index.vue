@@ -1,13 +1,14 @@
 <template>
   <div class='train-plan-manage-confrim'>
-    审核
+    <Breadcrumb />
   </div>
 </template>
 <script>
+import Breadcrumb from '../../../components/Breadcrumb'
 export default {
   name: 'train-plan-manage-confrim',
   
-  components: {},
+  components: {Breadcrumb},
 
   data() {
     return {
