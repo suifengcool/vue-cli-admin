@@ -53,13 +53,15 @@ export default {
 
 <style lang="less">
 .el-menu{
+  background-color: transparent;
   .sidebar-item {
     text-align: left;
     overflow: hidden;
-    .icon-font {
+    i {
       vertical-align: middle;
       margin-right: 5px;
       font-size: 18px;
+      color: #fff;
     }
     .el-menu-item, .el-submenu__title {
       padding: 0;
@@ -67,10 +69,6 @@ export default {
       height: 44px;
       line-height: 44px;
       font-size: 14px;
-      background-color: #3f6ab8;
-      i{
-        color: #fff;
-      }
       &:hover {
         background-color: #409EFF;
       }
@@ -78,8 +76,10 @@ export default {
         background-color: #409EFF;
       }
     }
-    .el-submenu__title:hover{
-      background-color: #487fb7;
+    .el-submenu{
+      .el-submenu__title:hover{
+        background-color: #487fb7;
+      }
     }
   }
 }
