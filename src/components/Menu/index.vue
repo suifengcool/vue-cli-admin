@@ -102,7 +102,6 @@ export default {
 }
 </script>
 <style lang="scss" scope>
-/* afsd*/
 .StartHere {
   height: 100vh;
   position: absolute;
@@ -144,30 +143,24 @@ export default {
         color: #fff;
         margin-left: 5px;
       }
-      
       img {
         width: 28px;
         height: 28px;
         vertical-align: middle;
       }
     }
-
   }
-
 }
-
-
 </style>
 <style lang="less">
 #menu{
   transition: all .3s ease;
-  position: absolute;
-  top: 60px;
-  bottom: 0;
-  left: 0;
   width: 100%;
   border-radius: 0;
   background-image: url(../../assets/image/menu/sidebar-bg.jpg);
-  // background-size: cover;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 60px;
+  padding-bottom: 60px;
 }
 </style>
