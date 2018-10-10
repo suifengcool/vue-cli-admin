@@ -4,7 +4,7 @@
       <div class="logBox">
         <div class="imgBox">
           <img src="../../assets/image/menu/ccb-logo.png" alt="LOGO" @click="goHome">
-          <p>建行大学管理系统</p>
+          <p>老曾投资后台管理系统</p>
         </div>
       </div>
       <!-- <StartHereRight 

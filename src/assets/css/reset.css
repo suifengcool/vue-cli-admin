@@ -55,17 +55,3 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-.bg_white{
-  background: #fff;
-}
-.content-title{
-  line-height: 70px;
-  height: 70px;
-  background: #fff;
-  margin-bottom: 20px;
-  padding-left: 26px;
-  border-left: 3px solid #51c5ff;
-  font-size: 22px;
-  margin-bottom: 30px;
-  color:#495869;
-}

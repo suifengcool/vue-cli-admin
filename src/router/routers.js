@@ -22,6 +22,9 @@ let config = [
   '/train_plan_manage/search/index__& 培训计划查询',           // 查询
   '/train_plan_manage/setting/index__& 培训计划维护',          // 维护
   '/train_plan_manage/confirm/index__& 培训计划审核',          // 审核
+
+  // 菜单管理
+  '/menu/index__& 菜单管理',          
 ]
 
 // 定义路由

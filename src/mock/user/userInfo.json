@@ -571,6 +571,14 @@
             }
           }
         ]
+      },
+      {
+        "path": "/menu",
+        "meta": {
+          "title": "菜单管理",
+          "icon": "el-icon-setting"
+        },
+        "children": []
       }
     ]
   }
